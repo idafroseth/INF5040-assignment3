@@ -11,7 +11,7 @@ public class GossipMessage {
 	private MessageType type;
 	
 	public GossipMessage(Node node, List<Entry> shuffleList) {
-		super();
+		//super();
 		this.node = node;
 		this.shuffleList = shuffleList;
 	}

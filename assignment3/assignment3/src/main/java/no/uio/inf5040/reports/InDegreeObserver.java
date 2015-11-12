@@ -72,12 +72,14 @@ public class InDegreeObserver implements Control
 			Long nodeId = Network.get(i).getID();
 			Integer degree = degreeCount.get(nodeId);
 			int value = 1;
-			if(dist.containsKey(degree))
+			if(dist.containsKey(degree)){
 				value = dist.get(degree) + 1;
+			}
 			dist.put(degree, value);
 		}
 		
 		// Sort the distribution and print the result
+		dist.remove(null);
 		SortedSet<Integer> sortedKeys = new TreeSet<Integer>(dist.keySet());
 		for(int i = 0; i <= sortedKeys.last(); i++){
 			if(sortedKeys.contains(i))
